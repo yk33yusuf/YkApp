@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="YkApp - AI-powered Etsy listing optimization tool to boost sales and discover customer insights">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
-    <title>YkApp - Etsy Seller Success Platform</title>
+    <title>YkApp - Professional Etsy Shop Management</title>
     <style>
         * {
             margin: 0;
@@ -15,37 +13,39 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.7;
-            color: #2d3748;
+            line-height: 1.6;
+            color: #1a1a1a;
             background: #ffffff;
         }
         
-        /* Navigation */
-        nav {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        nav .container {
+        .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+        
+        header {
+            background: #ffffff;
+            padding: 20px 0;
+            border-bottom: 1px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.98);
+        }
+        
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
         .logo {
-            font-size: 1.8em;
-            font-weight: bold;
-            background: linear-gradient(135deg, #F16521 0%, #D15641 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 26px;
+            font-weight: 700;
+            color: #0052CC;
+            letter-spacing: -0.5px;
         }
         
         .nav-links {
@@ -55,168 +55,161 @@
         }
         
         .nav-links a {
-            color: #2d3748;
+            color: #5e6c84;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: color 0.2s;
         }
         
         .nav-links a:hover {
-            color: #F16521;
+            color: #0052CC;
         }
         
-        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #F16521 0%, #D15641 100%);
+            padding: 100px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 100px 20px;
             text-align: center;
         }
         
         .hero h1 {
-            font-size: 3.5em;
+            font-size: 56px;
+            font-weight: 700;
             margin-bottom: 20px;
-            font-weight: 800;
             letter-spacing: -1px;
         }
         
         .hero p {
-            font-size: 1.4em;
-            margin-bottom: 30px;
-            opacity: 0.95;
+            font-size: 22px;
+            margin-bottom: 15px;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            opacity: 0.95;
+            font-weight: 300;
         }
         
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255,255,255,0.25);
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            backdrop-filter: blur(10px);
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
             margin-top: 20px;
-            font-size: 1.1em;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
-        .pulse {
-            width: 12px;
-            height: 12px;
-            background: #4ade80;
-            border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
+        .section {
+            padding: 100px 0;
         }
         
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.1); }
-        }
-        
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Features Section */
-        .features-section {
-            padding: 80px 20px;
-            background: #f7fafc;
-        }
-        
-        .section-title {
+        .section-header {
             text-align: center;
-            font-size: 2.5em;
-            color: #1a202c;
-            margin-bottom: 20px;
+            margin-bottom: 70px;
+        }
+        
+        .section-header h2 {
+            font-size: 42px;
             font-weight: 700;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
         }
         
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2em;
-            color: #718096;
-            margin-bottom: 60px;
+        .section-header p {
+            font-size: 18px;
+            color: #5e6c84;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
         }
         
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 40px;
-            margin-top: 40px;
         }
         
         .feature-card {
-            background: white;
             padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
         }
         
         .feature-card:hover {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(241,101,33,0.15);
-            border-color: #F16521;
+            border-color: #0052CC;
         }
         
         .feature-icon {
-            font-size: 3em;
-            margin-bottom: 20px;
-            display: block;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 25px;
         }
         
         .feature-card h3 {
-            color: #F16521;
-            font-size: 1.5em;
-            margin-bottom: 15px;
+            font-size: 22px;
             font-weight: 600;
+            margin-bottom: 15px;
+            color: #1a1a1a;
         }
         
         .feature-card p {
-            color: #4a5568;
-            line-height: 1.8;
-            font-size: 1.05em;
+            color: #5e6c84;
+            line-height: 1.7;
+            font-size: 16px;
         }
         
-        /* Stats Section */
-        .stats-section {
-            padding: 80px 20px;
-            background: white;
+        .bg-light {
+            background: #f8f9fa;
         }
         
-        .stats-grid {
+        .security-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .security-item {
             text-align: center;
-            margin-top: 40px;
+            padding: 30px;
         }
         
-        .stat-item h3 {
-            font-size: 3em;
-            color: #F16521;
-            font-weight: 800;
-            margin-bottom: 10px;
+        .security-item .feature-icon {
+            margin: 0 auto 20px;
         }
         
-        .stat-item p {
-            color: #718096;
-            font-size: 1.1em;
+        .security-item h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a1a;
         }
         
-        /* How It Works */
+        .security-item p {
+            color: #5e6c84;
+            font-size: 15px;
+        }
+        
         .how-it-works {
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #1a1a1a;
+            color: white;
+            padding: 100px 0;
+        }
+        
+        .how-it-works .section-header h2,
+        .how-it-works .section-header p {
             color: white;
         }
         
@@ -227,367 +220,447 @@
             margin-top: 50px;
         }
         
-        .step-card {
+        .step-item {
             text-align: center;
-            padding: 30px;
         }
         
         .step-number {
             width: 60px;
             height: 60px;
-            background: rgba(255,255,255,0.2);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5em;
-            font-weight: bold;
+            font-size: 24px;
+            font-weight: 700;
             margin: 0 auto 20px;
-            backdrop-filter: blur(10px);
         }
         
-        .step-card h3 {
-            font-size: 1.3em;
-            margin-bottom: 15px;
+        .step-item h4 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            font-weight: 600;
         }
         
-        .step-card p {
-            opacity: 0.9;
-            line-height: 1.7;
+        .step-item p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 15px;
         }
         
-        /* Trust Section */
-        .trust-section {
-            padding: 80px 20px;
-            background: #f7fafc;
-        }
-        
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .trust-card {
+        .scope-section {
             background: white;
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 4px solid #F16521;
         }
         
-        .trust-card h4 {
-            color: #F16521;
-            margin-bottom: 15px;
-            font-size: 1.2em;
+        .scope-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .scope-box {
+            padding: 40px;
+            border-radius: 12px;
+            border: 2px solid #e5e5e5;
+        }
+        
+        .scope-box.included {
+            background: #f0f9ff;
+            border-color: #0052CC;
+        }
+        
+        .scope-box.excluded {
+            background: #fff5f5;
+            border-color: #dc3545;
+        }
+        
+        .scope-box h3 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        .scope-box.included h3 {
+            color: #0052CC;
+        }
+        
+        .scope-box.excluded h3 {
+            color: #dc3545;
+        }
+        
+        .scope-list {
+            list-style: none;
+        }
+        
+        .scope-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-size: 16px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 10px;
         }
         
-        .trust-card p {
-            color: #4a5568;
-            line-height: 1.7;
+        .scope-list li:last-child {
+            border-bottom: none;
         }
         
-        /* Tech Stack */
-        .tech-section {
-            padding: 80px 20px;
-            background: white;
-            text-align: center;
-        }
-        
-        .tech-badges {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
-        }
-        
-        .tech-badge {
+        .cta-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 80px 0;
+            text-align: center;
             color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.05em;
-            box-shadow: 0 5px 15px rgba(102,126,234,0.3);
         }
         
-        /* Footer */
+        .cta-section h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 16px 45px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 17px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
         footer {
-            background: #1a202c;
-            color: white;
-            padding: 60px 20px 30px;
+            background: #1a1a1a;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 0 30px;
         }
         
         .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
         }
         
-        .footer-content p {
-            margin-bottom: 15px;
-            opacity: 0.8;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
+        .footer-section h4 {
             color: white;
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s;
+            font-size: 15px;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.2s;
         }
         
-        .footer-links a:hover {
-            opacity: 1;
+        .footer-section a:hover {
+            color: white;
         }
         
-        .etsy-disclaimer {
-            margin-top: 30px;
+        .disclaimer-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 40px;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        
+        .disclaimer-box strong {
+            color: white;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
             padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9em;
-            opacity: 0.6;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
         }
         
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.2em;
+                font-size: 36px;
             }
             
             .hero p {
-                font-size: 1.1em;
+                font-size: 18px;
             }
             
-            .section-title {
-                font-size: 2em;
+            .section-header h2 {
+                font-size: 32px;
             }
             
             .nav-links {
                 display: none;
             }
             
-            .features-grid,
-            .steps-grid,
-            .trust-grid {
+            .scope-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .scope-box {
+                min-width: auto;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
+    <header>
         <div class="container">
-            <div class="logo">🚀 YkApp</div>
-            <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#trust">Security</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Grow Your Etsy Business</h1>
-        <p>AI-powered tools to create optimized listings, discover customer insights, and boost your sales</p>
-        <div class="status-badge">
-            <span class="pulse"></span>
-            In Development - API Integration Phase
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <h2 class="section-title">Built for Etsy Sellers</h2>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>100%</h3>
-                    <p>Etsy API Compliant</p>
-                </div>
-                <div class="stat-item">
-                    <h3>AI</h3>
-                    <p>Powered Optimization</p>
-                </div>
-                <div class="stat-item">
-                    <h3>24/7</h3>
-                    <p>Market Analysis</p>
-                </div>
-                <div class="stat-item">
-                    <h3>Secure</h3>
-                    <p>Data Protection</p>
-                </div>
+            <div class="header-content">
+                <div class="logo">YkApp</div>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#security">Security</a></li>
+                        <li><a href="#how">How It Works</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Professional Shop Management</h1>
+            <p>Streamline your workflow with a secure, compliant tool designed for Etsy sellers</p>
+            <div class="badge">Personal Use Application</div>
+        </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features-section" id="features">
+    <section id="features" class="section">
         <div class="container">
-            <h2 class="section-title">Powerful Features</h2>
-            <p class="section-subtitle">Everything you need to succeed on Etsy marketplace</p>
-            
+            <div class="section-header">
+                <h2>Powerful Features for Your Shop</h2>
+                <p>Everything you need to manage your listings efficiently and professionally</p>
+            </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <span class="feature-icon">✨</span>
-                    <h3>Smart Listing Creation</h3>
-                    <p>Generate SEO-optimized titles, descriptions, and tags that help your products stand out. Our AI analyzes top-performing listings to suggest the best keywords and phrases for maximum visibility.</p>
+                    <div class="feature-icon">📝</div>
+                    <h3>Listing Management</h3>
+                    <p>View and edit your product listings with ease. Manage titles, descriptions, and tags from a single, intuitive interface.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <span class="feature-icon">🔍</span>
-                    <h3>Customer Interest Discovery</h3>
-                    <p>Understand what your customers are searching for. Track trending keywords, seasonal patterns, and emerging market demands to stay ahead of the competition.</p>
+                    <div class="feature-icon">📊</div>
+                    <h3>Performance Analytics</h3>
+                    <p>Track your shop's views, favorites, and sales data. Understand which products perform best and optimize accordingly.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <span class="feature-icon">📊</span>
-                    <h3>Sales Analytics</h3>
-                    <p>Get actionable insights about your listing performance. Track which products are getting views, favorites, and sales to optimize your strategy.</p>
+                    <div class="feature-icon">✏️</div>
+                    <h3>Bulk Editing</h3>
+                    <p>Update multiple listings simultaneously. Save time while maintaining consistency across your entire catalog.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <span class="feature-icon">🎯</span>
-                    <h3>Market Trend Analysis</h3>
-                    <p>Stay informed about what's hot in your niche. Discover trending categories, popular styles, and seasonal opportunities before your competitors.</p>
+                    <div class="feature-icon">🔍</div>
+                    <h3>Advanced Search</h3>
+                    <p>Quickly find and filter products in your shop. Locate any listing instantly with powerful search capabilities.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <span class="feature-icon">⚡</span>
-                    <h3>Quick Optimization</h3>
-                    <p>Update multiple listings at once with bulk editing tools. Save hours of manual work while maintaining consistency across your shop.</p>
+                    <div class="feature-icon">📸</div>
+                    <h3>Image Management</h3>
+                    <p>Organize and optimize your product photography. Manage your visual assets efficiently.</p>
                 </div>
                 
                 <div class="feature-card">
-                    <span class="feature-icon">💡</span>
-                    <h3>Smart Recommendations</h3>
-                    <p>Receive personalized suggestions based on your shop's performance and market trends. Know exactly what to improve for better results.</p>
+                    <div class="feature-icon">💾</div>
+                    <h3>Data Backup</h3>
+                    <p>Keep your listing data safe with regular backups. Never worry about losing important information.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="how-it-works" id="how-it-works">
+    <section id="security" class="section bg-light">
         <div class="container">
-            <h2 class="section-title" style="color: white;">How YkApp Works</h2>
-            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Simple, secure, and effective</p>
-            
+            <div class="section-header">
+                <h2>Enterprise-Grade Security</h2>
+                <p>Your data security and privacy are our highest priorities</p>
+            </div>
+            <div class="security-grid">
+                <div class="security-item">
+                    <div class="feature-icon">🔐</div>
+                    <h4>OAuth 2.0 Authentication</h4>
+                    <p>Industry-standard secure authentication. Your Etsy password is never stored or accessed.</p>
+                </div>
+                
+                <div class="security-item">
+                    <div class="feature-icon">🛡️</div>
+                    <h4>Data Protection</h4>
+                    <p>Your shop data is used exclusively for your purposes. No third-party sharing, ever.</p>
+                </div>
+                
+                <div class="security-item">
+                    <div class="feature-icon">✅</div>
+                    <h4>API Compliant</h4>
+                    <p>Full compliance with Etsy's API Terms of Use and all platform policies.</p>
+                </div>
+                
+                <div class="security-item">
+                    <div class="feature-icon">🔒</div>
+                    <h4>SSL/TLS Encryption</h4>
+                    <p>All data transmission is encrypted using industry-standard protocols.</p>
+                </div>
+                
+                <div class="security-item">
+                    <div class="feature-icon">📋</div>
+                    <h4>Transparent Permissions</h4>
+                    <p>Clear documentation of data access. You know exactly what we access and why.</p>
+                </div>
+                
+                <div class="security-item">
+                    <div class="feature-icon">⚡</div>
+                    <h4>Minimum Data Access</h4>
+                    <p>We request only the minimum permissions necessary to provide our services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Get started in four simple steps</p>
+            </div>
             <div class="steps-grid">
-                <div class="step-card">
+                <div class="step-item">
                     <div class="step-number">1</div>
-                    <h3>Connect Your Shop</h3>
-                    <p>Securely connect your Etsy shop using OAuth 2.0 authentication. Your credentials are never stored.</p>
+                    <h4>Connect Securely</h4>
+                    <p>Sign in with your Etsy account using secure OAuth 2.0 authentication</p>
                 </div>
                 
-                <div class="step-card">
+                <div class="step-item">
                     <div class="step-number">2</div>
-                    <h3>Analyze & Optimize</h3>
-                    <p>Our AI analyzes your listings and market trends to provide optimization recommendations.</p>
+                    <h4>Grant Permissions</h4>
+                    <p>Authorize access to your shop data with transparent, minimal permissions</p>
                 </div>
                 
-                <div class="step-card">
+                <div class="step-item">
                     <div class="step-number">3</div>
-                    <h3>Implement & Grow</h3>
-                    <p>Apply suggested improvements and watch your visibility and sales increase.</p>
+                    <h4>Manage Your Shop</h4>
+                    <p>View, edit, and optimize your listings through our intuitive interface</p>
                 </div>
                 
-                <div class="step-card">
+                <div class="step-item">
                     <div class="step-number">4</div>
-                    <h3>Track Performance</h3>
-                    <p>Monitor your progress with detailed analytics and continue optimizing for success.</p>
+                    <h4>Save & Sync</h4>
+                    <p>Changes sync directly to your Etsy shop in real-time</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trust & Security -->
-    <section class="trust-section" id="trust">
+    <section class="section scope-section">
         <div class="container">
-            <h2 class="section-title">Trust & Security</h2>
-            <p class="section-subtitle">Your data and privacy are our top priorities</p>
-            
-            <div class="trust-grid">
-                <div class="trust-card">
-                    <h4>🔒 Secure Authentication</h4>
-                    <p>We use OAuth 2.0 protocol, the same standard used by major platforms. Your Etsy credentials are never stored on our servers.</p>
+            <div class="section-header">
+                <h2>Application Scope</h2>
+                <p>Transparency about what our application does and doesn't do</p>
+            </div>
+            <div class="scope-grid">
+                <div class="scope-box included">
+                    <h3>✓ What We Do</h3>
+                    <ul class="scope-list">
+                        <li><span>✓</span> Read and manage your own shop listings</li>
+                        <li><span>✓</span> Display your shop performance metrics</li>
+                        <li><span>✓</span> Update your product information</li>
+                        <li><span>✓</span> Perform basic CRUD operations via Etsy API</li>
+                        <li><span>✓</span> Store data securely with encryption</li>
+                        <li><span>✓</span> Comply with all Etsy policies</li>
+                        <li><span>✓</span> Provide customer support for our users</li>
+                    </ul>
                 </div>
                 
-                <div class="trust-card">
-                    <h4>🛡️ Data Privacy</h4>
-                    <p>Your shop data is used exclusively for optimization purposes. We never share, sell, or use your data for any other purpose.</p>
-                </div>
-                
-                <div class="trust-card">
-                    <h4>✅ Etsy Compliant</h4>
-                    <p>Fully compliant with Etsy's API Terms of Use and policies. We follow all guidelines to ensure your account stays in good standing.</p>
-                </div>
-                
-                <div class="trust-card">
-                    <h4>🔐 Encrypted Connection</h4>
-                    <p>All data transmission is encrypted using industry-standard SSL/TLS protocols. Your information is always protected.</p>
-                </div>
-                
-                <div class="trust-card">
-                    <h4>📋 Transparent Operations</h4>
-                    <p>Clear documentation of what data we access and how we use it. No hidden permissions or unexpected access.</p>
-                </div>
-                
-                <div class="trust-card">
-                    <h4>🎯 Limited Scope</h4>
-                    <p>We only request the minimum API permissions necessary to provide our services. Your control, your data.</p>
+                <div class="scope-box excluded">
+                    <h3>✗ What We Don't Do</h3>
+                    <ul class="scope-list">
+                        <li><span>✗</span> Use artificial intelligence or machine learning</li>
+                        <li><span>✗</span> Perform market analysis or trend predictions</li>
+                        <li><span>✗</span> Collect or analyze data from other sellers</li>
+                        <li><span>✗</span> Provide automated SEO recommendations</li>
+                        <li><span>✗</span> Modify or bypass Etsy's checkout process</li>
+                        <li><span>✗</span> Send spam or automated messages</li>
+                        <li><span>✗</span> Share your data with third parties</li>
+                        <li><span>✗</span> Redirect to non-Etsy platforms</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tech Stack -->
-    <section class="tech-section">
+    <section class="cta-section">
         <div class="container">
-            <h2 class="section-title">Built With Modern Technology</h2>
-            <p class="section-subtitle">Reliable, fast, and scalable infrastructure</p>
-            
-            <div class="tech-badges">
-                <span class="tech-badge">Etsy API v3</span>
-                <span class="tech-badge">OAuth 2.0</span>
-                <span class="tech-badge">React</span>
-                <span class="tech-badge">Node.js</span>
-                <span class="tech-badge">AI/ML</span>
-                <span class="tech-badge">Cloud Infrastructure</span>
-                <span class="tech-badge">Real-time Analytics</span>
-                <span class="tech-badge">RESTful API</span>
-            </div>
+            <h2>Ready to Streamline Your Shop?</h2>
+            <p>Join the waitlist for early access</p>
+            <a href="#" class="cta-button">Coming Soon</a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="logo" style="color: white; -webkit-text-fill-color: white; font-size: 2em; margin-bottom: 20px;">🚀 YkApp</div>
-            <p>Empowering Etsy sellers with intelligent tools and insights</p>
-            
-            <div class="footer-links">
-                <a href="#features">Features</a>
-                <a href="#how-it-works">How It Works</a>
-                <a href="#trust">Security & Privacy</a>
-                <a href="mailto:contact@ykapp.com">Contact</a>
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>YkApp</h4>
+                    <p>Professional shop management tool for Etsy sellers. Built with security and compliance in mind.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="#features">Features</a>
+                    <a href="#security">Security</a>
+                    <a href="#how">How It Works</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Application Terms</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: support@ykapp.com</p>
+                    <p>Developer: developer@ykapp.com</p>
+                </div>
             </div>
             
-            <div class="etsy-disclaimer">
-                <p>&copy; 2025 YkApp. All rights reserved.</p>
-                <p>Etsy is a trademark of Etsy, Inc. YkApp is an independent application and is not affiliated with, endorsed by, or sponsored by Etsy, Inc.</p>
+            <div class="disclaimer-box">
+                <strong>Important Notice:</strong>
+                The term "Etsy" is a trademark of Etsy, Inc. This application uses Etsy's API but is not endorsed or certified by Etsy, Inc. YkApp is an independent tool designed for personal shop management and operates in accordance with Etsy's API Terms of Use. All Etsy-related trademarks and intellectual property belong to their respective owners.
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 YkApp. All rights reserved. | Personal Use Application</p>
             </div>
         </div>
     </footer>
