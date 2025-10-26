@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YkApp - Personal Etsy Shop Manager</title>
+    <title>YkApp - Etsy Tag Research Tool</title>
     <style>
         * {
             margin: 0;
@@ -12,475 +12,275 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #1a1a1a;
-            background: #ffffff;
+            color: #333;
+            background: #f8f9fa;
         }
         
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
         header {
-            background: #ffffff;
-            padding: 25px 0;
+            background: white;
+            padding: 20px 0;
             border-bottom: 1px solid #e5e5e5;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         
         .logo {
             font-size: 28px;
             font-weight: 700;
-            color: #0052CC;
-        }
-        
-        .personal-badge {
-            background: #e3f2fd;
-            color: #1976d2;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
+            color: #F56400;
         }
         
         .hero {
-            padding: 80px 0;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
+            padding: 80px 0;
             text-align: center;
         }
         
         .hero h1 {
-            font-size: 48px;
-            font-weight: 700;
+            font-size: 42px;
             margin-bottom: 20px;
         }
         
         .hero p {
-            font-size: 20px;
-            margin-bottom: 15px;
-            opacity: 0.95;
-        }
-        
-        .hero-note {
-            font-size: 16px;
-            opacity: 0.8;
-            margin-top: 20px;
+            font-size: 18px;
+            opacity: 0.9;
         }
         
         .section {
-            padding: 80px 0;
+            padding: 60px 0;
         }
         
-        .section-header {
+        .section h2 {
             text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-header h2 {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #1a1a1a;
-        }
-        
-        .section-header p {
-            font-size: 18px;
-            color: #5e6c84;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
-        }
-        
-        .feature-card {
-            padding: 35px;
-            background: #ffffff;
-            border: 1px solid #e5e5e5;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            transform: translateY(-3px);
-        }
-        
-        .feature-icon {
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
-        
-        .feature-card h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #1a1a1a;
-        }
-        
-        .feature-card p {
-            color: #5e6c84;
-            line-height: 1.6;
-            font-size: 15px;
-        }
-        
-        .bg-light {
-            background: #f8f9fa;
-        }
-        
-        .info-box {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            border-left: 4px solid #0052CC;
-            margin-bottom: 30px;
-        }
-        
-        .info-box h3 {
-            color: #0052CC;
-            font-size: 22px;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        
-        .info-box p {
-            color: #5e6c84;
-            line-height: 1.7;
-            margin-bottom: 10px;
-        }
-        
-        .scope-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 35px;
-            margin-top: 50px;
-        }
-        
-        .scope-box {
-            padding: 35px;
-            border-radius: 10px;
-            border: 2px solid #e5e5e5;
-        }
-        
-        .scope-box.included {
-            background: #f0f9ff;
-            border-color: #0052CC;
-        }
-        
-        .scope-box.excluded {
-            background: #fff5f5;
-            border-color: #dc3545;
-        }
-        
-        .scope-box h3 {
-            font-size: 22px;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        
-        .scope-box.included h3 {
-            color: #0052CC;
-        }
-        
-        .scope-box.excluded h3 {
-            color: #dc3545;
-        }
-        
-        .scope-list {
-            list-style: none;
-        }
-        
-        .scope-list li {
-            padding: 10px 0;
-            font-size: 15px;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
+            font-size: 32px;
+            margin-bottom: 40px;
             color: #333;
         }
         
-        .tech-stack {
+        .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             margin-top: 40px;
         }
         
-        .tech-item {
-            text-align: center;
-            padding: 25px;
+        .feature {
             background: white;
-            border-radius: 8px;
-            border: 1px solid #e5e5e5;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
         }
         
-        .tech-item h4 {
-            color: #1a1a1a;
-            margin-top: 10px;
-            font-size: 16px;
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .feature p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .about-box {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        
+        .about-box h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .about-box p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .about-box ul {
+            margin-left: 20px;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .buttons {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .buttons a {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
             font-weight: 600;
+            transition: background 0.3s;
         }
         
-        .tech-item p {
-            color: #5e6c84;
-            font-size: 14px;
-            margin-top: 5px;
+        .buttons a:hover {
+            background: #5568d3;
         }
         
         footer {
-            background: #1a1a1a;
-            color: rgba(255, 255, 255, 0.8);
-            padding: 50px 0 30px;
+            background: #2c3e50;
+            color: rgba(255,255,255,0.8);
+            padding: 40px 0 20px;
         }
         
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 30px;
+            margin-bottom: 30px;
         }
         
         .footer-section h4 {
             color: white;
-            font-size: 18px;
             margin-bottom: 15px;
-            font-weight: 600;
         }
         
-        .footer-section p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 15px;
-            line-height: 1.6;
-        }
-        
-        .disclaimer-box {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 25px;
-            border-radius: 8px;
-            margin-top: 40px;
-            font-size: 14px;
-            line-height: 1.8;
-        }
-        
-        .disclaimer-box strong {
-            color: white;
-            display: block;
-            margin-bottom: 10px;
-            font-size: 15px;
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
         }
         
         .footer-bottom {
             text-align: center;
-            padding-top: 30px;
-            margin-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.6);
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
         }
         
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-            
-            .scope-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .features-grid,
-            .tech-stack {
-                grid-template-columns: 1fr;
-            }
+        .disclaimer {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <div class="header-content">
-                <div class="logo">YkApp</div>
-                <div class="personal-badge">🔒 Personal Use Only</div>
-            </div>
+            <div class="logo">🏷️ YkApp</div>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <h1>My Personal Shop Manager</h1>
-            <p>A simple tool to manage my own Etsy shop efficiently</p>
-            <div class="hero-note">Built for personal use • API Compliant • Secure</div>
+            <h1>Etsy Tag Research Tool</h1>
+            <p>Simple tool to research and analyze Etsy product tags</p>
         </div>
     </section>
 
     <section class="section">
         <div class="container">
-            <div class="info-box">
-                <h3>About This Application</h3>
-                <p>This is a personal project I've developed to help manage my own Etsy shop. It's designed solely for my individual use and complies with all Etsy API Terms of Use and policies.</p>
-                <p>The application allows me to view and edit my product listings, track my shop performance, and manage my inventory more efficiently from a single interface.</p>
-            </div>
+            <h2>What YkApp Does</h2>
             
-            <div class="section-header">
-                <h2>Core Features</h2>
-                <p>Everything I need to manage my shop</p>
+            <div class="about-box">
+                <h3>📊 Simple Product Research</h3>
+                <p>YkApp is a basic research tool that helps Etsy sellers understand how tags work on successful products. We fetch public product data from Etsy to help you make informed decisions about your listings.</p>
             </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📝</div>
-                    <h3>Listing Management</h3>
-                    <p>View and edit my product listings. Update titles, descriptions, tags, and pricing directly.</p>
+
+            <div class="features">
+                <div class="feature">
+                    <h3>🔍 View Product Tags</h3>
+                    <p>See what tags successful products are using to get discovered by shoppers.</p>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Shop Analytics</h3>
-                    <p>Track my shop's performance metrics including views, favorites, and sales data.</p>
+
+                <div class="feature">
+                    <h3>📈 Basic Analytics</h3>
+                    <p>View public metrics like views, favorites, and sales for research purposes.</p>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">✏️</div>
-                    <h3>Bulk Updates</h3>
-                    <p>Update multiple listings at once to save time and maintain consistency.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🔍</div>
-                    <h3>Quick Search</h3>
-                    <p>Find specific products in my catalog quickly with advanced filtering.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">📸</div>
-                    <h3>Image Organization</h3>
-                    <p>Manage product photos and keep my visual assets organized.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">💾</div>
-                    <h3>Data Backup</h3>
-                    <p>Keep backups of my listing data for peace of mind.</p>
+
+                <div class="feature">
+                    <h3>🏪 Shop Research</h3>
+                    <p>Explore how other shops organize their products and categories.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section bg-light">
+    <section class="section" style="background: white;">
         <div class="container">
-            <div class="section-header">
-                <h2>Technical Implementation</h2>
-                <p>Built with security and compliance in mind</p>
-            </div>
+            <h2>How We Use Etsy API</h2>
             
-            <div class="tech-stack">
-                <div class="tech-item">
-                    <div class="feature-icon">🔐</div>
-                    <h4>OAuth 2.0</h4>
-                    <p>Secure authentication</p>
-                </div>
-                
-                <div class="tech-item">
-                    <div class="feature-icon">🔒</div>
-                    <h4>SSL/TLS</h4>
-                    <p>Encrypted connections</p>
-                </div>
-                
-                <div class="tech-item">
-                    <div class="feature-icon">✅</div>
-                    <h4>API Compliant</h4>
-                    <p>Follows all guidelines</p>
-                </div>
-                
-                <div class="tech-item">
-                    <div class="feature-icon">⚡</div>
-                    <h4>Rate Limited</h4>
-                    <p>Respects API limits</p>
-                </div>
+            <div class="about-box">
+                <h3>Data We Access</h3>
+                <p>We only access <strong>public data</strong> through Etsy's API:</p>
+                <ul>
+                    <li>Product titles, descriptions, and tags</li>
+                    <li>Shop names and basic information</li>
+                    <li>Public metrics (views, favorites, sales counts)</li>
+                </ul>
+                <p><strong>Important:</strong> We do NOT store any personal information. All data is fetched in real-time and used only for display purposes.</p>
+            </div>
+
+            <div class="about-box">
+                <h3>What We DON'T Do</h3>
+                <ul>
+                    <li>❌ No AI or automated content generation</li>
+                    <li>❌ No automatic listing creation or modification</li>
+                    <li>❌ No data scraping or storage</li>
+                    <li>❌ No third-party data sharing</li>
+                    <li>❌ No spam or automation</li>
+                </ul>
+            </div>
+
+            <div class="buttons">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="mailto:sohret33yk@gmail.com">Contact Us</a>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Application Scope</h2>
-                <p>Clear boundaries of what this tool does</p>
-            </div>
-            
-            <div class="scope-container">
-                <div class="scope-box included">
-                    <h3>✓ What It Does</h3>
-                    <ul class="scope-list">
-                        <li><span>✓</span> Reads and manages my own shop data</li>
-                        <li><span>✓</span> Displays my shop performance metrics</li>
-                        <li><span>✓</span> Updates my product listings</li>
-                        <li><span>✓</span> Performs basic CRUD operations</li>
-                        <li><span>✓</span> Stores data securely</li>
-                        <li><span>✓</span> Follows all Etsy API policies</li>
-                    </ul>
-                </div>
-                
-                <div class="scope-box excluded">
-                    <h3>✗ What It Doesn't Do</h3>
-                    <ul class="scope-list">
-                        <li><span>✗</span> No AI or machine learning</li>
-                        <li><span>✗</span> No market analysis or predictions</li>
-                        <li><span>✗</span> No data from other sellers</li>
-                        <li><span>✗</span> No automated SEO tools</li>
-                        <li><span>✗</span> No checkout modifications</li>
-                        <li><span>✗</span> No spam or automation</li>
-                        <li><span>✗</span> No third-party sharing</li>
-                        <li><span>✗</span> No external redirects</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <footer>
+    <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
                     <h4>YkApp</h4>
-                    <p>A research tool for Etsy sellers to analyze product tags and optimize their listings using Etsy's public API.</p>
+                    <p>A simple research tool for Etsy sellers to understand product tags and market trends.</p>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <p><a href="privacy.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Privacy Policy</a></p>
-                    <p><a href="terms.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Terms of Service</a></p>
-                    <p><a href="mailto:yk33yusuf@gmail.com" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Contact</a></p>
+                    <h4>Links</h4>
+                    <p><a href="privacy.html">Privacy Policy</a></p>
+                    <p><a href="terms.html">Terms of Service</a></p>
+                    <p><a href="mailto:sohret33yk@gmail.com">Contact</a></p>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>Email: yk33yusuf@gmail.com</p>
-                    <p>For support and inquiries</p>
+                    <p>Email: sohret33yk@gmail.com</p>
+                    <p>For questions and support</p>
                 </div>
             </div>
             
-            <div class="disclaimer-box">
-                <strong>Trademark & Disclaimer:</strong>
-                "Etsy" is a trademark of Etsy, Inc. This application uses Etsy's API but is not endorsed, certified, or affiliated with Etsy, Inc. YkApp is an independent tool developed for product research and complies with Etsy's API Terms of Use. All Etsy-related trademarks and intellectual property belong to Etsy, Inc.
+            <div class="disclaimer">
+                <strong>Disclaimer:</strong> "Etsy" is a trademark of Etsy, Inc. This application uses Etsy's API but is not endorsed or certified by Etsy, Inc. YkApp is an independent research tool that complies with Etsy's API Terms of Use.
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 YkApp • Etsy Tag Research Tool • 
-                <a href="privacy.html" style="color: rgba(255, 255, 255, 0.6); text-decoration: none;">Privacy</a> • 
-                <a href="terms.html" style="color: rgba(255, 255, 255, 0.6); text-decoration: none;">Terms</a> • 
-                <a href="mailto:yk33yusuf@gmail.com" style="color: rgba(255, 255, 255, 0.6); text-decoration: none;">Contact</a>
-                </p>
+                <p>&copy; 2025 YkApp • Etsy Tag Research Tool</p>
             </div>
         </div>
     </footer>
